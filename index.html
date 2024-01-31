@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>North-CAR</title>
+
+  <!--
+    - favicon
+  -->
+
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/apiCarStyle.css">
+
+  <!--
+    Flatpicker
+    
+  -->
+  <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+
+  <!-- ICONS LINK -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <!--
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+      <div class="overlay" data-overlay></div>
+
+      <a href="#" class="logo">
+        <img src="./assets/images/logo2.png" alt="Ridex logo" />
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li>
+            <a href="#home" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li>
+            <a href="#featured-car" class="navbar-link" data-nav-link>Explore cars</a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar-link" data-nav-link>About us</a>
+          </li>
+
+          <li>
+            <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="header-contact">
+          <div class="rotating-text">
+            <p>
+              <span class="word w-1">Mond-Friday<span></span> 8:30-17:00.</span>
+              <span class="word w-2">07733378499</span>
+            </p>
+          </div>
+        </div>
+
+        <a href="#featured-car" class="btn" aria-labelledby="aria-label-txt">
+          <ion-icon name="car-outline"></ion-icon>
+
+          <span id="aria-label-txt">Explore cars</span>
+        </a>
+
+        <a href="#" class="btn user-btn" aria-label="Profile">
+          <ion-icon name="person-outline"></ion-icon>
+        </a>
+
+        <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+          <span class="one"></span>
+          <span class="two"></span>
+          <span class="three"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <!--
+        - #HERO
+      -->
+      <section class="section hero" id="home">
+
+
+        <div class="container">
+          <div class="hero-content">
+            <h2 class="h1 hero-title">Explore Your Adventure Ride!</h2>
+
+            <p class="hero-text">
+              Discover Your Ideal Drive:<br />
+              Unleash the <strong>Freedom</strong> of Finding Your Perfect
+              Rental Car Today!
+            </p>
+          </div>
+
+          <!-- 
+          
+          <div class="hero-content">
+            <h2 class="h1 hero-title">Explore Your Adventure Ride!</h2>
+
+            <p class="hero-text">
+              Discover Your Ideal Drive:<br />
+              Unleash the <strong>Freedom</strong> of Finding Your Perfect
+              Rental Car Today!
+            </p>
+          </div>
+          
+          -->
+
+          <div class="hero-banner"></div>
+
+          <form action class="hero-form">
+            <div class="input-wrapper">
+              <!-- <label for="input-1" class="input-label"><i class='bx bxs-location-plus'></i>Location</label> -->
+
+              <input type="text" name="car-model" id="input-1" class="input-field" autocomplete="off" required />
+              <span><i class='bx bxs-location-plus'></i>Location</span>
+            </div>
+
+            <div class="input-wrapper">
+              <!-- <label for="input-2" class="input-label">Pick up Date</label> -->
+
+              <input type="datetime-local" name="pickup-date" id="input-2" class="input-field"
+                placeholder="Pick-up Date" />
+              <span>Pick-up Date</span>
+            </div>
+
+            <div class="input-wrapper">
+              <!-- <label for="input-3" class="input-label">Return Date & Time</label> -->
+
+              <input type="datetime-local" name="return-date" id="input-3" class="input-field"
+                placeholder="Return Date" />
+              <span>Return Date</span>
+            </div>
+
+            <button type="submit" class="btn">Search</button>
+          </form>
+        </div>
+      </section>
+
+      <!--
+        - #FEATURED CAR
+      -->
+
+      <section class="section featured-car" id="featured-car">
+        <div class="container">
+          <div class="title-wrapper">
+            <h2 class="h2 section-title">Featured cars</h2>
+
+            <a href="#" class="featured-car-link">
+              <span>View more</span>
+
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+          </div>
+
+          <ul class="featured-car-list" id="featured-car-list">
+
+          </ul>
+        </div>
+      </section>
+
+      <!--
+        - #GET START
+      -->
+
+      <section class="section get-start">
+        <div class="container">
+          <h2 class="h2 section-title">Get started with 4 simple steps</h2>
+
+          <ul class="get-start-list">
+            <li>
+              <div class="get-start-card">
+                <div class="card-icon icon-1">
+                  <ion-icon name="person-add-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Create a profile</h3>
+
+                <p class="card-text">
+                  If you are going to use a passage of Lorem Ipsum, you need
+                  to be sure.
+                </p>
+
+                <a href="#" class="card-link">Get started</a>
+              </div>
+            </li>
+
+            <li>
+              <div class="get-start-card">
+                <div class="card-icon icon-2">
+                  <ion-icon name="car-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Tell us what car you want</h3>
+
+                <p class="card-text">
+                  Various versions have evolved over the years, sometimes by
+                  accident, sometimes on purpose
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <div class="get-start-card">
+                <div class="card-icon icon-3">
+                  <ion-icon name="person-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Match with seller</h3>
+
+                <p class="card-text">
+                  It to make a type specimen book. It has survived not only
+                  five centuries, but also the leap into electronic
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <div class="get-start-card">
+                <div class="card-icon icon-4">
+                  <ion-icon name="card-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Make a deal</h3>
+
+                <p class="card-text">
+                  There are many variations of passages of Lorem available,
+                  but the majority have suffered alteration
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section about" id="about">
+        <div class="container">
+          <h1 class="h1 about-subtitle">About us</h1>
+          <div class="about-content">
+            <!-- <h2 class="h1 about-title">ABout Us</h2> -->
+
+            <div class="about-img">
+              <img src="/assets/images/gb.svg" alt="">
+            </div>
+            <div class="about-text">
+              <h2>Voices of Satisfaction</h2>
+              <p>Welcome to <strong>[Y/B]</strong>, where your car rental experience is designed for simplicity and
+                convenience. Our user-friendly online platform lets you easily browse, select, and pay for your
+                rental—all
+                from the comfort of your home. With flexible pickup options, friendly staff, and rental durations
+                tailored
+                to your needs, we ensure that your journey with us is smooth and enjoyable.</p>
+              <p>
+                At <strong>[Y/B]</strong>, we prioritize your peace of mind. Our vehicles undergo regular maintenance to
+                guarantee reliability, and our transparent pricing ensures no surprises. We believe in providing more
+                than
+                just transportation; we aim to deliver an experience that exceeds your expectations. Choose [Your
+                Company
+                Name] for an effortless and flexible car rental experience that goes beyond the ordinary.
+              </p>
+              <a href="#" class="card-link">Learn more</a>
+            </div>
+          </div>
+
+
+        </div>
+      </section>
+
+      <section class="services featured-car" id=" services">
+        <div class="container">
+          <div class="heading">
+            <span>Best Servives</span>
+            <h1>Meet the UK Car & Van Hire Fleet</h1>
+          </div>
+          <div class="filter-container">
+            <div>
+              <h2>Filter</h2>
+              <i class='bx bx-filter'></i>
+            </div>
+            <input type="text" name="" id="s_name" placeholder="Search by Name">
+            <input type="text" name="" id="s_date" placeholder="Search by Year">
+            <select id="fuel_type">
+              <option value="" disabled selected>Select Car Type</option>
+              <option value="gas" selected>Gas</option>
+              <option value="diesel"> Diesel</option>
+              <option value="electricity">Electric</option>
+
+              <!-- Add more fuel types as needed -->
+            </select>
+          </div>
+          <div class="box">
+
+          </div>
+          <div class="services-container" id="carContainer">
+
+          </div>
+        </div>
+
+      </section>
+
+      <!--
+        Customer Feedback
+        #
+    -->
+      <section class="section reiew" id="reviews">
+        <div class="container">
+
+          <h2 class="h2 section-title">Reviews</h2>
+          <h3>Customer Voices: Stories of Excellence</h3>
+          <div class="reviews-container" id="reviews-container">
+          </div>
+        </div>
+      </section>
+
+      <!--
+        - #BLOG
+      -->
+
+      <section class="section blog" id="blog">
+        <div class="container">
+          <h2 class="h2 section-title">Our Blog</h2>
+
+          <ul class="blog-list has-scrollbar" id="blog-list-id">
+
+          </ul>
+        </div>
+      </section>
+
+
+    </article>
+
+  </main>
+
+  <!--
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.svg" alt="Ridex logo" />
+          </a>
+
+          <p class="footer-text">
+            Search for cheap rental cars in New York. With a diverse fleet of
+            19,000 vehicles, Waydex offers its consumers an attractive and fun
+            selection.
+          </p>
+        </div>
+
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title">Company</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">About us</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Pricing plans</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Our blog</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Contacts</a>
+          </li>
+        </ul>
+
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title">Support</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Help center</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Ask a question</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Privacy policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Terms & conditions</a>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="footer-bottom">
+        <ul class="social-list">
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-skype"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="mail-outline"></ion-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  <script src="/assets/js/apiApp.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <!-- Flatpicker JS Link -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</body>
+
+<script>
+  config = {
+    disableMobile: "true",
+    minDate: "today",
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+  };
+  flatpickr("input[type = datetime-local]", config);
+</script>
+
+</html>
