@@ -12,7 +12,10 @@
     padding: 10px;
     box-shadow: var(--shadow);
     border: var(--border);
+    cursor: pointer;
 }
+
+
 
 .services-container .box .box-img {
     width: 100%;
@@ -27,54 +30,85 @@
     object-position: center;
 }
 
-.services-container .box p {
-    padding: 5px 10px;
-    border: 1px solid var(--darknavyblue);
-    width: 170px;
-    border-radius: 0.5rem;
-    margin: 1rem 0 1rem;
+.box .box-container {
+    padding: .8rem 0;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.box .box-container .car_name {
+    text-transform: uppercase;
+
+}
+
+.box .box-container p {
+    font-family: var(--ff-nunito);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-600);
+    padding: 3px 12px;
+    border: 2px dashed hsla(22, 91%, 53%, 0.4);
+    border-radius: var(--radius-14);
+}
+
+.services-container .box .box-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
+    margin-bottom: 15px;
+    width: 100%;
+
+}
+
+.services-container .box .box-content p {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.services-container .box .box-content img {
+    height: 25px;
+    width: 25px;
+    filter: hue-rotate(180deg);
+    color: rgba(254, 17, 0, 0.5);
+    filter: invert(25%) sepia(87%) saturate(5973%) hue-rotate(357deg) brightness(98%) contrast(116%);
+    /* color: var(--orang-clr); */
+}
+
+.services-container .box .box-content .capitalize-first-letter {
     text-transform: capitalize;
 }
 
-.services-container .box h3 {
-    font-weight: 500;
-    text-transform: uppercase;
-    text-decoration: underline;
-}
-
-.services-container .box h2 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--orang-clr);
-    margin: 0.2rem 0 0.5rem;
-}
-
-.services-container .box span {
-    font: 0.08rem;
-    font-weight: 500;
-    color: var(--card-bg-clr);
-}
-
-.services-container .box .serive-btn {
+.services-container .box .card-price-wrapper {
     display: flex;
-    justify-content: center;
-    background: var(--yellow-clr);
-    color: var(--darknavyblue);
-    padding: 10px;
-    border-radius: 0.5rem;
+    justify-content: space-between;
+
 }
 
-.services-container .box .serive-btn:hover {
-    background: var(--pink-clr);
+.services-container .box .card-price-wrapper div {
+    display: flex;
+    gap: 20px
 }
 
-/* .filter-container {
-    margin-top: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, auto));
-    grid: .02rem;
+.services-container .box .card-price-wrapper div .fav-btn {
+    --background: var(--beau-blue);
+    --color: var(--blue-jeans);
+    --height: 36px;
+    --width: 36px;
+    --shadow-2: none;
+}
 
-} */
+.services-container .box .card-price-wrapper div .btn {
+    padding: 0 .6rem;
+
+}
+
+.services-container .box .card-price-wrapper div .fav-btn:is(:hover, :focus) {
+    --background: var(--lavender-blush);
+    --color: var(--red-salsa);
+}
 
 .filter-container {
     display: flex;
@@ -119,4 +153,18 @@
     border: 1px solid var(--grey-font);
     background: var(--background-clr);
     border-radius: 0.5rem;
+}
+
+
+@media (min-width: 350px) {
+
+    /**
+     * FEATURED CAR
+     */
+
+    .services-container .box .box-content {
+        grid-template-columns: 1fr 1fr;
+
+        /* padding: 12px; */
+    }
 }
